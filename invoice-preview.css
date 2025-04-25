@@ -1,0 +1,433 @@
+.invoice-preview {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 18px;
+    box-shadow: none;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    transition: all 0.3s ease, background-color var(--transition-speed), color var(--transition-speed);
+    border: 1px solid var(--border-color);
+}
+
+.invoice-preview:hover {
+    box-shadow: 0 10px 30px var(--hover-shadow);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.preview-logo {
+    max-width: 50px; /* Adjust as needed */
+    max-height: 50px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents extra space below */
+    margin-bottom: 0.5rem; /* Add some space below */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: none;
+}
+
+.company-info h2 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.1rem;
+    font-weight: 700;
+}
+
+.invoice-meta {
+    text-align: right;
+}
+
+.invoice-meta h3 {
+    font-size: 1rem;
+    margin-bottom: none;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.invoice-number, .invoice-date {
+    margin-bottom: none;
+    color: var(--text-secondary);
+}
+
+.preview-body {
+    margin-bottom: none;
+}
+
+.buyer-info {
+    margin-bottom: 1rem;
+}
+
+.buyer-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.address {
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.items-table th {
+    text-align: center;
+    padding: 0.75rem;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.items-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.items-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tax-summary {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.tax-summary th, .tax-summary td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tax-summary th {
+    background: var(--bg-color);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.tax-summary tr:last-child th, 
+.tax-summary tr:last-child td {
+    border-bottom: none;
+    font-weight: 500;
+}
+
+.total-amount {
+    text-align: right;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.bank-details {
+    margin-bottom: 2rem;
+}
+
+.bank-details h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.qr-code {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.qr-code-container {
+    padding: 1rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.signature {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+}
+
+.signature p {
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.5rem;
+    width: 200px;
+    color: var(--text-secondary);
+}
+
+.additional-notes h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.additional-notes p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.calculation-details {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.calculation-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.calculation-row.grand-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.bank-qr-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 2rem; 
+    margin-bottom: 2rem; 
+    page-break-inside: avoid; 
+}
+
+.bank-qr-container .bank-details {
+    flex: 1; 
+    margin-bottom: 0; 
+    max-width: 65%; 
+}
+
+.bank-qr-container .qr-code {
+    flex-shrink: 0; 
+    margin-bottom: 0; 
+    text-align: center; 
+}
+
+.bank-qr-container .qr-code p {
+     font-size: 0.8em; 
+     margin-top: 0.5rem;
+}
+
+.bank-qr-container .qr-code-container {
+    
+    padding: 0.5rem; 
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: inline-block; 
+}
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm; 
+    }
+
+    body {
+        visibility: hidden; 
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact !important; 
+        print-color-adjust: exact !important;
+        margin-bottom: none;
+    }
+
+    
+    .invoice-preview {
+        visibility: visible;
+        position: absolute; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        margin: 0;
+        padding: 0;
+        box-shadow: white !important;
+        border: white !important;
+        background: white !important; 
+    }
+
+    
+    .invoice-preview * {
+        visibility: visible;
+        color: black !important;
+        background: white !important; 
+        border-color: rgb(94, 94, 94) !important; 
+    }
+    .company-info, .buyer-info, .invoice-meta, .invoice-date, .invoice-number {
+        margin-bottom: none;
+        margin-top: none;
+        font-size: 9pt;
+        padding: 0;
+        font-weight: 450;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    
+    header, footer, .invoice-form, .action-buttons, .theme-switch-container, #resetBtn, .nav-link, .remove-item {
+        display: none !important;
+    }
+
+   
+    .items-table, .tax-summary {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: none;
+        page-break-inside: avoid; 
+        font-size: 9pt; 
+    }
+
+    .items-table th, .items-table td,
+    .tax-summary th, .tax-summary td {
+        border: 1px solid black; 
+        padding: 4px 6px; 
+        text-align: left;
+        word-wrap: break-word; 
+        border-bottom: rgb(94, 94, 94);
+    }
+
+    .items-table th, .tax-summary th {
+        background-color: white !important; 
+        color: black !important; 
+        font-weight: 350;
+        border-bottom: black;
+    }
+
+   
+    .items-table td:nth-child(4), 
+    .items-table td:nth-child(5), 
+    .items-table td:nth-child(7), 
+    .tax-summary td:nth-child(2), 
+    .tax-summary td:nth-child(3), 
+    .tax-summary td:nth-child(4), 
+    .tax-summary td:nth-child(5) { 
+        text-align: center;
+    }
+
+    
+     .calculation-details, .bank-details, .additional-notes, .qr-code, .signature, .footer-note {
+        font-size: 7pt;
+        page-break-inside: none;
+        margin-top: 5mm;
+     }
+    .total-amount {
+         text-align: right;
+         margin-top: 5mm;
+         font-size: 10pt;
+         page-break-inside: avoid;
+     }
+    .calculation-details {
+         margin-top: 0;
+         padding-top: 0;
+         border-top: 1px solid #ccc;
+         border-bottom:1px solid #ccc; 
+         font-size: 9pt;
+     }
+
+    .qr-code-container {
+         border: 1px solid #ccc !important;
+         padding: 2px !important;
+         background: white !important; 
+    }
+     .qr-code img {
+         display: block; 
+     }
+
+    .footer-note {
+         width: 100%;
+         text-align: center;
+         margin-top: none;
+         border-top: none;
+         padding-top: 0;
+         position: static; 
+    }
+     .preview-logo {
+        max-width: 100px;  
+        max-height: 65x;
+        height: auto;
+        display: block;
+        margin-bottom: none;
+        margin-left: auto;
+        margin-right: auto; 
+     }
+
+
+    
+    h2, h3, h4, p, div {
+         page-break-inside: none;
+    }
+    tr {
+         page-break-inside: none;
+         page-break-after: none;
+    }
+    .bank-qr-container {
+        display: flex !important; 
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 10mm !important; 
+        margin-bottom: 5mm !important; 
+        width: 100% !important; 
+        page-break-inside: avoid !important;
+    }
+
+    .bank-qr-container .bank-details {
+        flex: 1 !important;
+        margin-bottom: 0 !important;
+         max-width: 65%; 
+         padding-right: 5mm; 
+     }
+
+    .bank-qr-container .qr-code {
+         flex-shrink: 0 !important;
+         margin-bottom: 0 !important;
+         text-align: center !important;
+    }
+
+     .bank-qr-container .qr-code p {
+         font-size: 7pt !important; 
+         margin-top: 2mm !important;
+     }
+
+     .bank-qr-container .qr-code-container {
+         padding: 2mm !important; 
+         border: 1px solid #ccc !important;
+         border-radius: 2px !important;
+         display: inline-block !important;
+     }
+     .bank-qr-container .qr-code img {
+         display: block !important; 
+     }
+}
